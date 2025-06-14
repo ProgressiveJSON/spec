@@ -83,18 +83,17 @@ A **fragment** is a standalone JSON object that contains a subset of the final s
 
 Example:
 
+- Fragment 1
 ```json
-// Fragment 1
 { "user": { "name": "Alice" } }
 ```
 
+- Fragment 2
 ```json
-// Fragment 2
 { "user": { "age": 30 } }
 ```
 
-These can be safely merged into:
-
+- Result
 ```json
 { "user": { "name": "Alice", "age": 30 } }
 ```
@@ -109,7 +108,11 @@ If a later fragment attempts to redefine an already set field, such as `user.nam
   * Replacing an object or array with another type
 
 * **Arrays must be appended**
-  Arrays grow over time; their content may arrive in separate fragments, but the same array should never be redefined. The server must emit array elements in the correct order: the builder only appends and does not sort or deduplicate.
+  Arrays grow over time; their content may arrive in separate fragments, but the same array should never be redefined. The server must emit array elements in the correct order: the builder only appends and does not sort or deduplicate.\
+  Example:
+  - Fragment 1: `{ "comments": ["Hello there!", "How are you?"] }`
+  - Fragment 2: `{ "comments": ["Fine thanks!"] }`
+  - Result: `{ "comments": ["Hello there!", "How are you?", "Fine thanks!"] }`
 
 ## Design Goals
 
@@ -205,11 +208,10 @@ All test cases for the client library are located in the `tests/` directory. Eac
 * `currentResult`: The full reconstructed object after applying the fragment (only required when `success` is `true`).
 
 A test runner (to be implemented per language) should:
-1. Create a new `ProgressiveJsonBuilder`.
-2. Apply each `fragment` in sequence.
-3. Assert that:
-   * If `success: true`, the builder does not throw and `GetCurrentJson()` equals `currentResult`.
-   * If `success: false`, applying the fragment should fail.
+1. Apply each `fragment` in sequence.
+2. Assert that:
+   * If `success: true`, applying the fragment does not fail and the new result is deeply equal to `currentResult`.
+   * If `success: false`, applying the fragment fails.
 
 A JSON Schema for test files is available at:
 [`tests/progressive-json-test-case.schema.json`](tests/progressive-json-test-case.schema.json)
