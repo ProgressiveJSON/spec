@@ -1,0 +1,19 @@
+[
+  {
+    "fragment": {
+      "config": "enabled"
+    },
+    "currentResult": {
+      "config": "enabled"
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "config": {
+        "mode": "strict"
+      }
+    },
+    "success": false
+  }
+]

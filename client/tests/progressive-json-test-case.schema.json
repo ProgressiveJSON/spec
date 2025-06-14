@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Progressive JSON - Client Library Test Case",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "fragment",
+      "success"
+    ],
+    "properties": {
+      "fragment": {
+        "type": "object",
+        "description": "A JSON fragment that is received"
+      },
+      "success": {
+        "type": "boolean",
+        "description": "Whether applying the fragment to the current result is expected to succeed"
+      },
+      "currentResult": {
+        "type": "object",
+        "description": "The expected result after applying the fragment (only if success is true)"
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "success": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "currentResult"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "success": {
+              "const": false
+            }
+          }
+        },
+        "then": {
+          "not": {
+            "required": [
+              "currentResult"
+            ]
+          }
+        }
+      }
+    ],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "fragment": {
+      "a": 1
+    },
+    "currentResult": {
+      "a": 1
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "b": 2
+    },
+    "currentResult": {
+      "a": 1,
+      "b": 2
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "c": 3
+    },
+    "currentResult": {
+      "a": 1,
+      "b": 2,
+      "c": 3
+    },
+    "success": true
+  }
+]

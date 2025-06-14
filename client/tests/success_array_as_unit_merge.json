@@ -1,0 +1,17 @@
+[
+  {
+    "fragment": {
+      "items": [
+        1,
+        2
+      ]
+    },
+    "currentResult": {
+      "items": [
+        1,
+        2
+      ]
+    },
+    "success": true
+  }
+]

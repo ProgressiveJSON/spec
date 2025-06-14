@@ -1,0 +1,52 @@
+[
+  {
+    "fragment": {
+      "values": [
+        1,
+        2,
+        3
+      ]
+    },
+    "currentResult": {
+      "values": [
+        1,
+        2,
+        3
+      ]
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "values": [
+        4,
+        5
+      ]
+    },
+    "currentResult": {
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "values": []
+    },
+    "currentResult": {
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "success": true
+  }
+]

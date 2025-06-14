@@ -1,0 +1,46 @@
+[
+  {
+    "fragment": {
+      "user": {
+        "name": "Alice"
+      }
+    },
+    "currentResult": {
+      "user": {
+        "name": "Alice"
+      }
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "user": {
+        "email": "alice@example.com"
+      }
+    },
+    "currentResult": {
+      "user": {
+        "name": "Alice",
+        "email": "alice@example.com"
+      }
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "meta": {
+        "createdAt": "2025-01-01"
+      }
+    },
+    "currentResult": {
+      "user": {
+        "name": "Alice",
+        "email": "alice@example.com"
+      },
+      "meta": {
+        "createdAt": "2025-01-01"
+      }
+    },
+    "success": true
+  }
+]

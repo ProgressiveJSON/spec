@@ -1,0 +1,17 @@
+[
+  {
+    "fragment": {
+      "status": "pending"
+    },
+    "currentResult": {
+      "status": "pending"
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "status": "complete"
+    },
+    "success": false
+  }
+]

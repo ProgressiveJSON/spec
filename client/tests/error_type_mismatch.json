@@ -1,0 +1,21 @@
+[
+  {
+    "fragment": {
+      "config": {
+        "retries": 3
+      }
+    },
+    "currentResult": {
+      "config": {
+        "retries": 3
+      }
+    },
+    "success": true
+  },
+  {
+    "fragment": {
+      "config": "should not be a string"
+    },
+    "success": false
+  }
+]
