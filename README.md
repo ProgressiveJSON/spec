@@ -1,7 +1,6 @@
 # Progressive JSON – Design Document
 
 > [!NOTE]
-> The content and technical details of this document have been carefully reviewed for accuracy. 
 > While the wording and phrasing have been generated with the assistance of AI, the core concepts, data, and technical information are sound and accurate.
 
 ## Goal
