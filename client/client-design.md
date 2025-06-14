@@ -107,7 +107,7 @@ If a later fragment attempts to redefine an already set field, such as `user.nam
   * Changing a scalar value
   * Replacing an object or array with another type
 
-* **Arrays must be appended**
+* **Arrays must be concatenated**
   Arrays grow over time; their content may arrive in separate fragments, but the same array should never be redefined. The server must emit array elements in the correct order: the builder only appends and does not sort or deduplicate.\
   Example:
   - Fragment 1: `{ "comments": ["Hello there!", "How are you?"] }`
